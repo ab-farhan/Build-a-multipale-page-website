@@ -18,6 +18,7 @@
 <body>
     @include('website.component.navbar')
     @yield('content')
+    @include('website.component.footer')
 
 <script type="text/javascript" src="{{ asset('website/js/jquery-3.4.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('website/js/popper.min.js') }}"></script>

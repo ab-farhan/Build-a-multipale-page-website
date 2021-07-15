@@ -18,7 +18,7 @@
         <tr>
             <th class="th-sm">{{$data->id}}</th>
             <th class="th-sm">{{$data->ip_address}}</th>
-            <th class="th-sm">{{$data->created_at->format('d-F-Y')}}</th>
+            <th class="th-sm">{{$data->created_at->format('d-F-Y | h:i:s A')}}</th>
           </tr>
         @endforeach
       

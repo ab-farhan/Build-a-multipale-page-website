@@ -17,6 +17,6 @@ class WebsiteController extends Controller
             'created_at'=>Carbon::now()->toDateTimeString(),
 
         ]);
-        return view('layouts.web_master');
+        return view('website.index');
     }
 }
