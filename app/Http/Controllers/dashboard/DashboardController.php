@@ -17,6 +17,6 @@ class DashboardController extends Controller
         //     'created_at'=>Carbon::now()->toDateTimeString(),
 
         // ]);
-        return view('layouts.admin_master');
+        return view('dashboard.index');
     }
 }

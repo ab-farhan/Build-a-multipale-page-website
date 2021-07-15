@@ -9,6 +9,7 @@ use App\Models\visitor;
 class VisitorController extends Controller
 {
     public function index(){
-        return view();
+        $visitorData=visitor::orderBy('id','DESC')->take(100)->get();
+        return view('dashboard.visitor',compact('visitorData'));
     }
 }

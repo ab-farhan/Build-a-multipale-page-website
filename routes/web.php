@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboard\DashboardController;
+use App\Http\Controllers\dashboard\VisitorController;
 use App\Http\Controllers\website\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ Route::get('/',[WebsiteController::class,'index']);
 // dashboard Routes 
 Route::prefix('/dashboard')->group(function(){
     Route::get('',[DashboardController::class,'index']);
+    Route::get('/visitor',[VisitorController::class,'index']);
 });
 
 
