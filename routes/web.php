@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboard\DashboardController;
+use App\Http\Controllers\website\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,13 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.web_master');
+Route::get('/',[WebsiteController::class,'index']);
+
+// dashboard Routes 
+Route::prefix('/dashboard')->group(function(){
+    Route::get('',[DashboardController::class,'index']);
 });
 
-Route::get('/dashboard',[DashboardController::class,'index']);
 
-// Route::get('/admin', function () {
-//     return view('layouts.admin_master');
-// });
 
