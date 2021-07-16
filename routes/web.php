@@ -23,9 +23,11 @@ Route::get('/',[WebsiteController::class,'index']);
 // dashboard Routes 
 Route::prefix('/dashboard')->group(function(){
     Route::get('',[DashboardController::class,'index']);
+    // service page route 
     Route::get('/visitor',[VisitorController::class,'index']);
     Route::get('/service',[ServiceController::class,'index']);
     Route::get('/serviceData',[ServiceController::class,'getData']);
+    Route::post('/serviceDelete',[ServiceController::class,'deleteData']);
 });
 
 

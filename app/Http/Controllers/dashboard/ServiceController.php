@@ -16,4 +16,16 @@ class ServiceController extends Controller
         $services= services::all();
         return $services;
     }
+
+    public function deleteData(Request $request){
+
+        $id=$request->input('id');
+        $result=services::where('id','=',$id)->delete();
+
+        if($result==true){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
 }

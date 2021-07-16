@@ -18,7 +18,8 @@ class WebsiteController extends Controller
             'created_at'=>Carbon::now()->toDateTimeString(),
 
         ]);
-        $services=services::get();
+        
+        $services=services::orderBy('id','ASC')->take(4)->get();
         return view('website.index',compact('services'));
     }
 }

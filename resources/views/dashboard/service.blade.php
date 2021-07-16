@@ -37,6 +37,28 @@
     </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade"  id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> </h5>
+          <button type="button" class="btn-close " data-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+      <div class="modal-body">
+        <h4 class="text-center">Do you want to delete?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">
+          No
+        </button>
+        <button data-id="" id="serviceDeleteConfirm" type="button" class="btn btn-sm btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 
