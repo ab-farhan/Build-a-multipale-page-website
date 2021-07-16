@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboard\DashboardController;
+use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\VisitorController;
 use App\Http\Controllers\website\WebsiteController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,8 @@ Route::get('/',[WebsiteController::class,'index']);
 Route::prefix('/dashboard')->group(function(){
     Route::get('',[DashboardController::class,'index']);
     Route::get('/visitor',[VisitorController::class,'index']);
+    Route::get('/service',[ServiceController::class,'index']);
+    Route::get('/serviceData',[ServiceController::class,'getData']);
 });
 
 

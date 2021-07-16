@@ -10,6 +10,6 @@ class visitor extends Model
     use HasFactory;
     public $table ="visitor";
     public $primaryKey="id";
-    public $incrementimg=true;
+    public $incrementing=true;
     public $keyTupe='int';
 }

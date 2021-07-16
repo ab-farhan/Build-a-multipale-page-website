@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\visitor;
 use Carbon\Carbon;
+use App\Models\services;
 
 class WebsiteController extends Controller
 {
@@ -17,6 +18,7 @@ class WebsiteController extends Controller
             'created_at'=>Carbon::now()->toDateTimeString(),
 
         ]);
-        return view('website.index');
+        $services=services::get();
+        return view('website.index',compact('services'));
     }
 }

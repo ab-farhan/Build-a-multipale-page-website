@@ -51,8 +51,9 @@
 <script src="{{ asset('admin/js/custom.min-2.js') }}"></script>
 <script src="{{ asset('admin/js/datatables.min.js') }}"></script>
 <script src="{{ asset('admin/js/datatables-select.min.js') }}"></script>
+<script src="{{ asset('admin/js/axios.min.js') }}"></script>
 <script src="{{ asset('admin/js/custom.js') }}"></script>
-<script src="{{ asset('admin/js/axios.min.js') }}js/axios.min.js"></script>
+@yield('script')
 </body>
 </html>
 
