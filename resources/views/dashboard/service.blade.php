@@ -94,7 +94,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel2"> </h5>
-          <button type="button" class="btn-close " data-dismiss="modal" aria-label="Close">&times;</button>
+          <h3 id="serviceDeleteId" class="d-none"></h3>
+          <button type="button" class="btn " data-dismiss="modal" aria-label="Close" style="padding:5px 10px !important;"><i class="fas fa-times"></i></button>
         </div>
       <div class="modal-body">
         <h4 class="text-center">Do you want to delete?</h4>

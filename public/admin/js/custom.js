@@ -36,15 +36,11 @@ function getServiceData() {
                 //click delete icon for show modal and get id for delete
                 $('.serviceDelete').click(function () {
                     var id = $(this).data('id');
-                    $('#serviceDeleteConfirm').attr('data-id', id);
+                    $('#serviceDeleteId').html(id);
                     $('#deleteModal').modal('show');
                 });
 
-                //click for confirm(Yes) to delete
-                $('#serviceDeleteConfirm').click(function () {
-                    var id = $(this).data('id');
-                    serviceDelete(id);
-                });
+                
 
                 //click edit icon for show modal to edit
                 $('.serviceEdit').click(function () {
@@ -54,15 +50,7 @@ function getServiceData() {
                     $('#editModal').modal('show');
 
                 });
-                //update button click for sercice update and send data to database
-                $('#serviceEditConfirm').click(function () {
-                    var serviceId = $('#serviceEditID').val();
-                    var service_name = $('#serviceName').val();
-                    var service_des = $('#serviceSrtDes').val();
-                    var service_img = $('#serviceImage').val();
-
-                    serviceUpdataData(serviceId, service_name, service_des, service_img)
-                });
+                
 
             } else {
                 $('#loader').addClass('d-none')
@@ -75,10 +63,16 @@ function getServiceData() {
         });
 }
 
+//click for confirm(Yes) to delete
+$('#serviceDeleteConfirm').click(function () {
+    var id = $('#serviceDeleteId').html();
+    serviceDelete(id);
+});
+
 // for services delete data
 function serviceDelete(deleteId) {
     axios.post('/dashboard/serviceDelete', {
-            id: deleteId
+            id: deleteId,
         })
         .then(function (response) {
             if (response.data == 1) {
@@ -92,7 +86,8 @@ function serviceDelete(deleteId) {
             }
         })
         .catch(function (error) {
-
+            $('#deleteModal').modal('hide');
+            toastr.error('Something went wrong!!');
         })
 }
 // for singla data fetch from data base and edit this
@@ -120,6 +115,16 @@ function serviceUpdate(detailsId) {
             $('#serviceEditWrong').removeClass('d-none');
         })
 }
+
+//update button click for sercice update and send data to database
+$('#serviceEditConfirm').click(function () {
+    var serviceId = $('#serviceEditID').val();
+    var service_name = $('#serviceName').val();
+    var service_des = $('#serviceSrtDes').val();
+    var service_img = $('#serviceImage').val();
+
+    serviceUpdataData(serviceId, service_name, service_des, service_img)
+});
 
 //for update data
 function serviceUpdataData(serviceId, service_name, service_des, service_img) {
