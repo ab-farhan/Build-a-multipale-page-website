@@ -25,9 +25,17 @@ Route::prefix('/dashboard')->group(function(){
     Route::get('',[DashboardController::class,'index']);
     // service page route 
     Route::get('/visitor',[VisitorController::class,'index']);
+
+    //service management route here
     Route::get('/service',[ServiceController::class,'index']);
+    //for all table data fetch
     Route::get('/serviceData',[ServiceController::class,'getData']);
+    //for single data delete
     Route::post('/serviceDelete',[ServiceController::class,'deleteData']);
+    // for single data fetch by id
+    Route::post('/serviceSingleData',[ServiceController::class,'getSingleData']);
+    // for update data
+    Route::post('/serviceUpdate',[ServiceController::class,'serviceUpdate']);
 });
 
 

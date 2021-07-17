@@ -13,7 +13,7 @@ class services extends Model
     public $incrementing=true;
     public $keyType=false;
     
-    protected $casts = [
+    public $casts = [
         // ... other casts
         'id' => 'array', // all lower case
     ];
