@@ -13,6 +13,28 @@ class ServiceController extends Controller
         // $services= services::get();
         return view('dashboard.service');
     }
+
+    public function createService(Request $request){
+        
+        $name=$request->input('name');
+        $des=$request->input('des');
+        $img=$request->input('img');
+
+        $result=services::insert([
+            'service_name'=>$name,
+            'service_sort_des'=>$des,
+            'service_img'=>$img,
+            'created_at'=>Carbon::now()->toDateTimeString(),
+        ]);
+
+        if($result==true){
+            return 1;
+        }else{
+            return 0;
+        }
+    
+    }
+
     public function getData(){
         $services= services::all();
         return $services;

@@ -1,5 +1,9 @@
+
 .wrapper-padding{
 padding: 1% 1% 1% 1% ;
+}
+.btn{
+	font-family: sans-serif !important;
 }
 .table-img{
 	width:60px;
@@ -11,4 +15,8 @@ padding: 1% 1% 1% 1% ;
 }.loading_icon_sm{
 	height: 50px;
 	width: 50px;
+}
+
+#deleteModal .modal-dialog {
+    max-width: 390px;
 }

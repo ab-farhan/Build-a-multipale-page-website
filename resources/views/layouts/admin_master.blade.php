@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href="{{ asset('admin/css/mdb.min.css') }} ">
     <link rel="stylesheet" href="{{ asset('admin/css/sidenav.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/datatables-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/responsive.css') }}">
 </head>
 <body class="fix-header fix-sidebar">
     <div id="main-wrapper">

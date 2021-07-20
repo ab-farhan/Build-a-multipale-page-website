@@ -29,3 +29,17 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+<script>
+      // visitor page dataTable
+$(document).ready(function () {
+    $('#VisitorDt').DataTable({
+        "order": false,
+    });
+    $('.dataTables_length').addClass('bs-select');
+});
+
+
+</script>
+@endsection
