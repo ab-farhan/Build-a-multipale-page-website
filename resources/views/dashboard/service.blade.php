@@ -8,7 +8,7 @@
         <h3 class="d-inline-block mt-2">All Service Information</h3> <button id="addNewService"  type="button" class="btn btn-sm btn-success float-right" style="padding:10px 15px;"><i class="fas fa-plus-circle"> Add Service</i></button>
       </div>
     <div class="col-md-12 card-body">
-    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="serviceDataTable">
       <thead class="bg-danger text-white ">
         <tr>
           <th>Image</th>
@@ -163,7 +163,6 @@
         
 getServiceData();
 
-
 // servie page get data and delete && edit
 
 function getServiceData() {
@@ -174,8 +173,11 @@ axios.get('/dashboard/serviceData')
         if (responce.status == 200) {
             $('#main_div').removeClass('d-none');
             $('#loader').addClass('d-none');
+            //destroy data table before loading data and show properly 
+            $('#serviceDataTable').DataTable().destroy();
             //for empty table before get data form database
             $('#serviceTable').empty();
+            
 
             var jsonData = responce.data;
 
@@ -205,6 +207,14 @@ axios.get('/dashboard/serviceData')
                 $('#editModal').modal('show');
 
             });
+            
+              // service  dataTable
+                $('#serviceDataTable').DataTable({
+                    "order": false,
+                });
+                $('.dataTables_length').addClass('bs-select');
+          
+
 
 
         } else {
@@ -331,13 +341,13 @@ $('#serviceCreateConfirm').click(function () {
 var service_name = $('#serviceAddName').val();
 var service_des = $('#serviceAddSrtDes').val();
 var service_img = $('#serviceAddImage').val();
-
+//alert(service_name+ service_des+ service_img)
 serviceCreate(service_name, service_des, service_img)
 });
 
 //service create method
 function serviceCreate(service_name, service_des, service_img) {
-
+  
 if (service_name.length == 0) {
     $('#serviceAddName').css('border-color', 'red')
     toastr.error('Opps!! Service Description Filed is require');
@@ -348,12 +358,12 @@ if (service_name.length == 0) {
     $('#serviceAddImage').css('border-color', 'red');
     toastr.error('Opps!!  Service Image Filed is require.');
 } else {
-    axios.post('/dashboard/create', {
+    axios.post('/dashboard/serviceCreate', {
             name: service_name,
             des: service_des,
             img: service_img,
         })
-        .then(function (response) {
+        .then(function(response) {
             if (response.data == 1) {
                 //$('#serviceAddLoader').removeClass('d-none');
                 $('#addNewServiceModal').modal('hide');
@@ -366,7 +376,8 @@ if (service_name.length == 0) {
             }
 
         }).catch(function (error) {
-            toastr.error('Opps!! Something went wrong.');
+            //toastr.error('Opps!! Something went wrong.');
+            alert('Custom Error')
         })
 }
 

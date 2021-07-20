@@ -38,7 +38,7 @@ Route::prefix('/dashboard')->group(function(){
     // for update data by axios
     Route::post('/serviceUpdate',[ServiceController::class,'serviceUpdate']);
     //for create new servcie 
-    Route::post('/create',[ServiceController::class,'createService']);
+    Route::post('/serviceCreate',[ServiceController::class,'createService']);
 
     //course management route start here
     Route::get('/course',[CourseController::class,'index']);
@@ -47,9 +47,9 @@ Route::prefix('/dashboard')->group(function(){
     //for single delete data
     Route::post('/courseDelete',[CourseController::class,'deleteData']);
     //create new course
-    Route::post('/create',[CourseController::class,'create']);
+    Route::post('/courseCreate',[CourseController::class,'create']);
     // update course 
-    Route::post('/update',[CourseController::class,'CourseUpdate']);
+    Route::post('/courseUpdate',[CourseController::class,'CourseUpdate']);
     // single data fetch from database
     Route::post('/singleData',[CourseController::class,'getSingleData']);
 });

@@ -8,7 +8,7 @@
         <h3 class="d-inline-block mt-2">All Courses Information</h3> <button id="addCourse"  type="button" class="btn btn-sm btn-success float-right" style="padding:10px 15px;"><i class="fas fa-plus-circle"> Add Course</i></button>
       </div>
     <div class="col-md-12 card-body">
-    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <table id="courseDataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="bg-danger text-white ">
         <tr>
           
@@ -241,6 +241,9 @@ function getCourseData() {
         $('#main_div').removeClass('d-none');
         //loading animation before loading data
         $('#loader').addClass('d-none');
+        
+        //destroy data table before loading data and show data properly 
+        $('#courseDataTable').DataTable().destroy();
         // enpty table before get data form database
         $('#CourseTable').empty();
         if (response.status == 200) {
@@ -272,6 +275,14 @@ function getCourseData() {
                 $('#updateCourseModal').modal('show')
                 getSingleData(id)
             });
+
+            // service  dataTable
+            $('#courseDataTable').DataTable({
+                    "order": false,
+                });
+                $('.dataTables_length').addClass('bs-select');
+
+
         }else {
             $('#main_div').addClass('d-none');
             $('#wrong').removeClass('d-none');
@@ -342,7 +353,7 @@ function courseCreate(course_name, course_srt_des, course_long_des, course_fee, 
   } else if (course_link.length == 0) {
       $('#courseAddLink').css('border-color', 'red')
   } else {
-      axios.post('/dashboard/create', {
+      axios.post('/dashboard/courseCreate', {
             course_name: course_name,
             course_srt_des: course_srt_des,
             course_long_des: course_long_des,
@@ -442,7 +453,7 @@ function updateCourse(id, course_name, course_srt_des, course_long_des, course_f
       $('.c_link').html('This filed is required')
   } else {
       $('#courseUpdateLoader').removeClass('d-none')
-      axios.post('/dashboard/update',{
+      axios.post('/dashboard/courseUpdate',{
           id: id,
           course_name: course_name,
           course_srt_des: course_srt_des,

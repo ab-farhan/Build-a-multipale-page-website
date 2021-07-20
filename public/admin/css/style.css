@@ -20,3 +20,7 @@ padding: 1% 1% 1% 1% ;
 #deleteModal .modal-dialog {
     max-width: 390px;
 }
+div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+    padding-top: 1.5rem;
+    padding-bottom: 0rem;
+}

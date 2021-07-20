@@ -21,7 +21,7 @@ class WebsiteController extends Controller
         //get couses
         $services=services::orderBy('id','ASC')->take(4)->get();
         //get services
-        $courses=Course::orderBy('id','DESC')->limit(6)->get();
+        $courses=Course::orderBy('id')->limit(6)->get();
         return view('website.index',compact('services','courses'));
     }
 }
