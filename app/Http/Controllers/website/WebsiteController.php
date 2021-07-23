@@ -4,6 +4,7 @@ namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\visitor;
 use Carbon\Carbon;
@@ -22,6 +23,8 @@ class WebsiteController extends Controller
         $services=services::orderBy('id','ASC')->take(4)->get();
         //get services
         $courses=Course::orderBy('id')->limit(6)->get();
-        return view('website.index',compact('services','courses'));
+        // get projects
+        $projects=Project::orderBy('id')->limit(4)->get();
+        return view('website.index',compact('services','courses','projects'));
     }
 }

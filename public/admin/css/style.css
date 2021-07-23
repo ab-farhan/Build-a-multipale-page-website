@@ -24,3 +24,7 @@ div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTable
     padding-top: 1.5rem;
     padding-bottom: 0rem;
 }
+.table-img2 {
+    width: 150px;
+    height: auto;
+}

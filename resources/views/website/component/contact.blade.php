@@ -1,4 +1,4 @@
-<div class="container-fluid section-marginTop parallax text-center">
+<div class="container-fluid section-marginTop parallax text-center"  data-bg="{{ asset('website/images/banner.jpg') }}">
     <div class="row ">
         <div class="col-md-6 contact-form ">
             <h5 class="help-line-title" style="color: #FF2D20 !important;"> <i class="fas icon-custom-color fa-headphones-alt"></i> হেলপ লাইন </h5>

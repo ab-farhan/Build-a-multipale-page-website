@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\dashboard\CourseController;
 use App\Http\Controllers\dashboard\DashboardController;
+use App\Http\Controllers\dashboard\ProjectController;
 use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\VisitorController;
 use App\Http\Controllers\website\WebsiteController;
@@ -44,7 +45,7 @@ Route::prefix('/dashboard')->group(function(){
     Route::get('/course',[CourseController::class,'index']);
     //for all data fetch to course table by axios
     Route::get('/courseData',[CourseController::class,'getData']);
-    //for single delete data
+    //for single row data delete 
     Route::post('/courseDelete',[CourseController::class,'deleteData']);
     //create new course
     Route::post('/courseCreate',[CourseController::class,'create']);
@@ -52,6 +53,21 @@ Route::prefix('/dashboard')->group(function(){
     Route::post('/courseUpdate',[CourseController::class,'CourseUpdate']);
     // single data fetch from database
     Route::post('/singleData',[CourseController::class,'getSingleData']);
+
+    // project management
+    Route::get('/project',[ProjectController::class,'index']);
+    //for all data fetch to project table by axios
+    Route::get('/projectData',[ProjectController::class,'getData']);
+    //for single row data delete
+    Route::post('/projectData',[ProjectController::class,'deleteData']);
+    //create new project
+    Route::post('/projectCreate',[ProjectController::class,'create']);
+    // project update
+    Route::post('/projectUpdate',[ProjectController::class,'ProjectUpdate']);
+    //single data fetch from database
+    Route::post('/projectSingleData',[ProjectController::class,'getSingleData']);
+    //for project delete by id with axios
+    Route::post('/projectDelete',[ProjectController::class,'delete']);
 });
 
 
