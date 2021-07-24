@@ -8,6 +8,7 @@
                 <li> <a href="{{url('/dashboard/service')}}" ><span> <i class="fas fa-globe"></i> </span><span class="hide-menu">Services</span></a></li>
                 <li> <a href="{{url('/dashboard/course')}}" ><span> <i class="fas fa-book-open"></i> </span><span class="hide-menu">Courses</span></a></li>
                 <li> <a href="{{url('/dashboard/project')}}" ><span> <i class="fas fa-code"></i> </span><span class="hide-menu">Projects</span></a></li>
+                <li> <a href="{{url('/dashboard/contact')}}" ><span> <i class="fas fa-comments"></i> </span><span class="hide-menu">Contacts</span></a></li>
                 
             </ul>
         </nav>

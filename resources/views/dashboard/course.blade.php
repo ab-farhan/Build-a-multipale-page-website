@@ -253,7 +253,7 @@ function getCourseData() {
             $.each(jsonData, function (i) {
                 $('<tr>').html(
                     "<td>" + jsonData[i].course_name + "</td>" +
-                    "<td width='30%'>" + jsonData[i].course_sort_des + "</td>" +
+                    "<td width='30%'>" + jsonData[i].course_sort_des +"</td>" +
                     "<td>" + jsonData[i].course_fee + "</td>" +
                     "<td>" + jsonData[i].course_total_enroll + "</td>" +
                     "<td>" + jsonData[i].course_total_class + "</td>" +

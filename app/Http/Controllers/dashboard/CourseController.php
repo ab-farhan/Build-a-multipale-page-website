@@ -37,6 +37,7 @@ class CourseController extends Controller
             'created_at'=>Carbon::now()->toDateTimeString(),
         ]);
         
+        
         if($create){
             return 1;
         }else{

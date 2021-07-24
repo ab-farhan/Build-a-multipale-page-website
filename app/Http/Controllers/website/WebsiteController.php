@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\Course;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -26,5 +27,25 @@ class WebsiteController extends Controller
         // get projects
         $projects=Project::orderBy('id')->limit(4)->get();
         return view('website.index',compact('services','courses','projects'));
+    }
+    public function contact(Request $request){
+        $name=$request->input('name');
+        $email=$request->input('email');
+        $phone=$request->input('phone');
+        $msg=$request->input('msg');
+
+        $contact=Contact::insert([
+            'contact_name'=>$name,
+            'contact_phone'=>$phone,
+            'contact_email'=>$email,
+            'contact_msg'=>$msg,
+            'created_at'=>Carbon::now()->toDateTimeString(),
+        ]);
+        
+        if($contact){
+            return 1;
+        }else{
+            return 0;
+        }
     }
 }

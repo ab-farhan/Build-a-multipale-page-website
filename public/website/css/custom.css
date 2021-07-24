@@ -162,7 +162,7 @@
 }
 
 .parallax {
-    background-image: url("website/images/banner.jpg");
+    background-image: url("../images/banner.jpg"); 
     min-height: 400px;
     background-attachment: fixed;
     background-position: center;

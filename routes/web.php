@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\ContactController;
 use App\Http\Controllers\dashboard\CourseController;
 use App\Http\Controllers\dashboard\DashboardController;
 use App\Http\Controllers\dashboard\ProjectController;
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[WebsiteController::class,'index']);
+Route::post('/contactmsg',[WebsiteController::class,'contact']);
 
 // dashboard Routes 
 Route::prefix('/dashboard')->group(function(){
@@ -68,6 +70,9 @@ Route::prefix('/dashboard')->group(function(){
     Route::post('/projectSingleData',[ProjectController::class,'getSingleData']);
     //for project delete by id with axios
     Route::post('/projectDelete',[ProjectController::class,'delete']);
+
+    //contact management
+    Route::get('/contact',[ContactController::class,'index']);
 });
 
 
