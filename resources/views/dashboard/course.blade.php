@@ -281,7 +281,7 @@ function getCourseData() {
             $('#courseDataTable').DataTable({
                     "order": false,
               });
-                $('.dataTables_length').addClass('bs-select');
+            $('.dataTables_length').addClass('bs-select');
 
 
         }else {

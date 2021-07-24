@@ -4,6 +4,7 @@ use App\Http\Controllers\dashboard\ContactController;
 use App\Http\Controllers\dashboard\CourseController;
 use App\Http\Controllers\dashboard\DashboardController;
 use App\Http\Controllers\dashboard\ProjectController;
+use App\Http\Controllers\dashboard\ReviewController;
 use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\VisitorController;
 use App\Http\Controllers\website\WebsiteController;
@@ -77,6 +78,17 @@ Route::prefix('/dashboard')->group(function(){
     Route::get('/contactData',[ContactController::class,'getData']);
     //contact delete
     Route::post('/contactDelete',[ContactController::class,'delete']);
+
+    //Review management
+    Route::get('/review',[ReviewController::class,'index']);
+    // get all data form database
+    Route::get('/reviewData',[ReviewController::class,'getData']);
+    //review delete
+    Route::post('/reviewDelete',[ReviewController::class,'delete']);
+    //single data fetch from database
+    Route::post('/reviewSingleData',[ReviewController::class,'getSingleData']);
+    //update review data
+    Route::post('/reviewUpdate',[ReviewController::class,'update']);
 });
 
 

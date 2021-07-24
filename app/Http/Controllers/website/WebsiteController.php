@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Course;
 use App\Models\Project;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Models\visitor;
 use Carbon\Carbon;
@@ -26,7 +27,8 @@ class WebsiteController extends Controller
         $courses=Course::orderBy('id')->limit(6)->get();
         // get projects
         $projects=Project::orderBy('id')->limit(4)->get();
-        return view('website.index',compact('services','courses','projects'));
+        $review=Review::orderBy('id',)->limit(4)->get();
+        return view('website.index',compact('services','courses','projects','review'));
     }
     public function contact(Request $request){
         $name=$request->input('name');
