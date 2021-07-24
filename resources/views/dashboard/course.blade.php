@@ -244,13 +244,14 @@ function getCourseData() {
         
         //destroy data table before loading data and show data properly 
         $('#courseDataTable').DataTable().destroy();
-        // enpty table before get data form database
+        // empty table before get data form database
         $('#CourseTable').empty();
         if (response.status == 200) {
             // this varaiable for load json data from database
             var jsonData = response.data;
             //jquery loop for shwoing data in table
             $.each(jsonData, function (i) {
+              
                 $('<tr>').html(
                     "<td>" + jsonData[i].course_name + "</td>" +
                     "<td width='30%'>" + jsonData[i].course_sort_des +"</td>" +
@@ -276,10 +277,10 @@ function getCourseData() {
                 getSingleData(id)
             });
 
-            // service  dataTable
+            // contact  dataTable
             $('#courseDataTable').DataTable({
                     "order": false,
-                });
+              });
                 $('.dataTables_length').addClass('bs-select');
 
 

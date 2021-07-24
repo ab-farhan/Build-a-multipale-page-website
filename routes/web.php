@@ -73,6 +73,10 @@ Route::prefix('/dashboard')->group(function(){
 
     //contact management
     Route::get('/contact',[ContactController::class,'index']);
+    // get all data form database
+    Route::get('/contactData',[ContactController::class,'getData']);
+    //contact delete
+    Route::post('/contactDelete',[ContactController::class,'delete']);
 });
 
 
