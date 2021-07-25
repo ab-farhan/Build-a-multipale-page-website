@@ -17,7 +17,7 @@
             <div class="col-md-3 col-lg-3 col-sm-6">
                 <h3 class="service-card-title">তথ্য </h3>
                 <hr>
-                <a class="footer-link" href="#Contact">যোগাযোগ</a><br>
+                <a class="footer-link" href="{{url('/contact')}}">যোগাযোগ</a><br>
                 <a class="footer-link" href="{{url('/project')}}">প্রজেক্ট সমূহ</a><br>
                 <a class="footer-link" href="{{url('/course')}}">কোর্স সমূহ </a><br>
             </div>

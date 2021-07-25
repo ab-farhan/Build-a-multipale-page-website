@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\AdminController;
 use App\Http\Controllers\dashboard\ContactController;
 use App\Http\Controllers\dashboard\CourseController;
 use App\Http\Controllers\dashboard\DashboardController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\dashboard\ProjectController;
 use App\Http\Controllers\dashboard\ReviewController;
 use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\VisitorController;
+use App\Http\Controllers\website\WebContactController;
 use App\Http\Controllers\website\WebCourseController;
 use App\Http\Controllers\website\WebPrivacyController;
 use App\Http\Controllers\website\WebProjectController;
@@ -31,10 +33,17 @@ Route::get('/course',[WebCourseController::class,'index']);
 Route::get('/project',[WebProjectController::class,'index']);
 Route::get('/privacyPolicy',[WebPrivacyController::class,'index']);
 Route::get('/terms',[WebTermsController::class,'index']);
+Route::get('/contact',[WebContactController::class,'index']);
 Route::post('/contactmsg',[WebsiteController::class,'contact']);
 
+// admin login 
+Route::get('/adminlogin',[AdminController::class,'index']);
+Route::get('/adminlogout',[AdminController::class,'onLogOut']);
+Route::post('/adminLoginA',[AdminController::class,'onLogin']);
+//Route::get('login',[UserController::class,'index']);
+
 // dashboard Routes 
-Route::prefix('/dashboard')->group(function(){
+Route::prefix('/dashboard')->middleware(['admin'])->group(function(){
     Route::get('',[DashboardController::class,'index']);
     // service page route 
     Route::get('/visitor',[VisitorController::class,'index']);

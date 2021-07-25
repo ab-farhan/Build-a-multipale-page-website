@@ -30,6 +30,7 @@ class WebsiteController extends Controller
         $review=Review::orderBy('id',)->limit(4)->get();
         return view('website.index',compact('services','courses','projects','review'));
     }
+    
     public function contact(Request $request){
         $name=$request->input('name');
         $email=$request->input('email');

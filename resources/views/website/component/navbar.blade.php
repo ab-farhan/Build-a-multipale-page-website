@@ -20,7 +20,7 @@
                 <a class="nav-link nav-font" href="#">ব্লগ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-font" href="#Contact">যোগাযোগ</a>
+                <a class="nav-link nav-font" href="{{url('/contact')}}" target="_blank">যোগাযোগ</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
