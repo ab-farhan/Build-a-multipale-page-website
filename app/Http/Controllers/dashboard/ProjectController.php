@@ -28,7 +28,7 @@ class ProjectController extends Controller
             //'project_long_des'=>$project_long_des,
             'project_link'=>$project_link,
             'project_img'=>$project_img,
-            'updated_at'=>Carbon::now()->toDateTimeString(),
+            'created_at'=>Carbon::now()->toDateTimeString(),
         ]);
         if($project){
             return 1;

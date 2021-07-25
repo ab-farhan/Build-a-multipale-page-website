@@ -7,7 +7,11 @@ use App\Http\Controllers\dashboard\ProjectController;
 use App\Http\Controllers\dashboard\ReviewController;
 use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\VisitorController;
+use App\Http\Controllers\website\WebCourseController;
+use App\Http\Controllers\website\WebPrivacyController;
+use App\Http\Controllers\website\WebProjectController;
 use App\Http\Controllers\website\WebsiteController;
+use App\Http\Controllers\website\WebTermsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[WebsiteController::class,'index']);
+Route::get('/course',[WebCourseController::class,'index']);
+Route::get('/project',[WebProjectController::class,'index']);
+Route::get('/privacyPolicy',[WebPrivacyController::class,'index']);
+Route::get('/terms',[WebTermsController::class,'index']);
 Route::post('/contactmsg',[WebsiteController::class,'contact']);
 
 // dashboard Routes 
@@ -89,6 +97,8 @@ Route::prefix('/dashboard')->group(function(){
     Route::post('/reviewSingleData',[ReviewController::class,'getSingleData']);
     //update review data
     Route::post('/reviewUpdate',[ReviewController::class,'update']);
+    //create review 
+    Route::post('/reviewCreate',[ReviewController::class,'create']);
 });
 
 

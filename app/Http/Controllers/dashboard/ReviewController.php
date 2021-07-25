@@ -25,6 +25,24 @@ class ReviewController extends Controller
 
     }
 
+    public function create(Request $request){
+        $name=$request->input('name');
+        $img=$request->input('img');
+        $des=$request->input('des');
+        
+        $create=Review::insert([
+            'name'=>$name,
+            'des'=>$des,
+            'img'=>$img,
+            'created_at'=>Carbon::now()->toDateTimeString(),
+        ]);
+        if($create){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
     public function update(Request $request){
         $id=$request->input('id');
         $name=$request->input('name');
