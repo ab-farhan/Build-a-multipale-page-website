@@ -4,6 +4,7 @@ use App\Http\Controllers\dashboard\AdminController;
 use App\Http\Controllers\dashboard\ContactController;
 use App\Http\Controllers\dashboard\CourseController;
 use App\Http\Controllers\dashboard\DashboardController;
+use App\Http\Controllers\dashboard\GalleryController;
 use App\Http\Controllers\dashboard\ProjectController;
 use App\Http\Controllers\dashboard\ReviewController;
 use App\Http\Controllers\dashboard\ServiceController;
@@ -108,6 +109,14 @@ Route::prefix('/dashboard')->middleware(['admin'])->group(function(){
     Route::post('/reviewUpdate',[ReviewController::class,'update']);
     //create review 
     Route::post('/reviewCreate',[ReviewController::class,'create']);
+
+
+    //Gallery management
+    Route::get('/gallery',[GalleryController::class,'index']);
+    Route::post('/photoUpload',[GalleryController::class,'upload']);
+    Route::get('/getPhoto',[GalleryController::class,'getPhoto']);
+    Route::get('/getPhotoId/{id}',[GalleryController::class,'getPhotoId']);
+    Route::post('/photoDelete',[GalleryController::class,'DeletePhoto']);
 });
 
 

@@ -196,7 +196,6 @@ function getProjectData() {
                     "<td><img class='table-img2' src='http://127.0.0.1:8000/admin/" + jsonData[i].project_img + "'> </td>" +
                     "<td>" + jsonData[i].project_name + "</td>" +
                     "<td width='30%'>" + jsonData[i].project_sort_des + "</td>" +
-                    
                     "<td width='10%'><a data-id='" + jsonData[i].id + "' id='projectViewDetails'><i class='fas fa-eye text-info'></i></a> <a data-id='" + jsonData[i].id + "' class='projectEdit px-2'><i class='fas fa-edit'></i></a> <a data-id='" + jsonData[i].id + "' class='projectDelete'><i class='fas fa-trash text-danger'></i></a></td>"
                 ).appendTo('#ProjectTable');
             });
